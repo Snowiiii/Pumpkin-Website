@@ -1,0 +1,89 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header, .footer {
+    background-color: #181818;
+    border-bottom: 1px solid #333;
+}
+
+a, .cta-button, .download-button {
+    color: #00ff80;
+    text-decoration: none;
+    background-color: #121212;
+    border: 1px solid #00ff80;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+
+a:hover, .cta-button:hover, .download-button:hover {
+    background-color: #00ff80;
+    color: #121212;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.plugin-card, .filter-sidebar {
+    background-color: #1a1a1a;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #333;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+}
+
+.plugin-icon {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    margin-right: 12px;
+}
+
+/* Plugin Detail Tabs */
+.tab-navigation {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.tab {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.tab.active {
+    background-color: #00ff80;
+    color: #121212;
+}
+
+.tab-content {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 4px;
+}
+

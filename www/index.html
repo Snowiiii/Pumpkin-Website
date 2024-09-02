@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pumpkin - Empowering Everyone to Host Fast and Efficient Minecraft Servers.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link href="content/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="top-bar">
+        <div class="logo">
+            <img src="content/pumpkin.png" alt="Pumpkin Logo" />
+            Pumpkin
+        </div>
+        <nav class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/pluginstore/index.html">Plugin Store</a>
+            <a href="https://github.com/Snowiiii/Pumpkin">GitHub</a>
+            <a href="/docs/">Docs</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="animated-bg"></div>
+        <div class="hero-content">
+            <h1>Empowering Everyone to Host Fast and Efficient Minecraft Servers.</h1>
+            <p>Experience unparalleled performance and ease of use with Pumpkin.</p>
+            <button onclick="window.location.href='https://github.com/Snowiiii/Pumpkin'" class="download-btn">Visit GitHub</button>
+        </div>
+    </section>
+
+    <!-- Information Section 1 -->
+    <section class="info-section">
+        <div class="info-content">
+            <img src="content/performance.png" alt="Feature Image 1" class="info-image" onclick="openModal(this)" />
+            <div class="info-text">
+                <h2>High Performance</h2>
+                <p>Pumpkin is optimized to deliver fast, smooth, and reliable server performance, making it the perfect choice for Minecraft enthusiasts and server administrators who want to host their own servers while using as little resources as possible.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Information Section 2 -->
+    <section class="info-section alt">
+        <div class="info-content">
+            <div class="info-text">
+                <h2>Fun Multiplayer</h2>
+                <p>Play with your friends easily through Pumpkin, with more and more in development multiplayer features every day, without compromising our insanely fast performance.</p>
+            </div>
+            <img src="content/multiplayer.png" alt="Feature Image 2" class="info-image" onclick="openModal(this)" />
+        </div>
+    </section>
+
+    <!-- Information Section 3 -->
+    <section class="info-section">
+        <div class="info-content">
+            <img src="content/github.png" alt="Feature Image 3" class="info-image" onclick="openModal(this)" />
+            <div class="info-text">
+                <h2>Open Source</h2>
+                <p>Pumpkin is open source and welcome for all new contributors. If you'd like to help out with Pumpkin, you can contribute to us on GitHub at <a href="https://github.com/Snowiiii/Pumpkin">Snowiiii/Pumpkin</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plugins Section -->
+<section class="plugins-section">
+    <div class="plugins-content">
+        <h2>Get Plugins</h2>
+        <p>Enhance your server experience with our wide range of plugins. Easily integrate features, improve performance, and customize your server to fit your needs.</p>
+        <button onclick="window.location.href='https://github.com/Snowiiii/Pumpkin/plugins'" class="view-plugins-btn">View Plugins</button>
+    </div>
+</section>
+
+
+    <!-- Modal for Image Popup -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage" />
+    </div>
+
+
+    <!-- Footer Section -->
+<footer class="footer">
+        <div class="footer-brand">
+    <div class="footer-content">
+        <div class="footer-links">
+            <h3>Links</h3>
+            <ul>
+                <li><a href="/pluginstore/index.html">Plugin Store</a></li>
+                <li><a href="https://github.com/Snowiiii/Pumpkin">GitHub</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-about">
+            <h3>About</h3>
+            <p>Pumpkin is a Minecraft server software designed to offer fast and efficient performance. Join our community and enhance your Minecraft experience.</p>
+        </div>
+        <div class="footer-contact">
+            <h3>Online</h3>
+            <ul>
+                <li><a href="https://discord.gg/x2923hweS3">Discord</a></li>
+                <li><a href="https://github.com/Snowiiii/Pumpkin">GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Pumpkin and its contributors. All rights reserved.</p>
+    </div>
+</footer>
+    <script src="content/script.js"></script>
+</body>
+</html>
