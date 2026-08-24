@@ -6,11 +6,15 @@ import { zhCN } from "./zh_cn";
 import { de } from "./de";
 import { trTR } from "./tr_tr";
 import { jaJP } from "./ja_jp";
+import { fr } from "./fr";
 
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
     title: "Pumpkin",
+
+    // Uncomment this line to work into a GitHub page
+    base: "/Pumpkin-Docs/",
 
     cleanUrls: true,
     rewrites: {
@@ -38,6 +42,9 @@ export default defineConfig({
         },
         ja_jp: {
             label: "日本語", ...jaJP
+        },
+        fr: {
+            label: "Français", ...fr
         },
     },
 
