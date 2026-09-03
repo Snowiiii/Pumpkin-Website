@@ -6,6 +6,7 @@ import { zhCN } from "./zh_cn";
 import { de } from "./de";
 import { trTR } from "./tr_tr";
 import { jaJP } from "./ja_jp";
+import { zhTW } from "./zh_tw";
 
 
 // https://vitepress.dev/reference/site-config
@@ -38,6 +39,9 @@ export default defineConfig({
         },
         ja_jp: {
             label: "日本語", ...jaJP
+        },
+        zh_tw: {
+            label: "繁體中文（台灣）", ...zhTW
         },
     },
 
