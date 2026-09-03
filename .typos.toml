@@ -12,6 +12,8 @@ extend-exclude = [
     "docs/.vitepress/tr_tr.ts",
     "docs/ja_jp/",
     "docs/.vitepress/ja_jp.ts",
+    "docs/zh_tw/",
+    "docs/.vitepress/zh_tw.ts",
 ]
 
 [default.extend-words]
