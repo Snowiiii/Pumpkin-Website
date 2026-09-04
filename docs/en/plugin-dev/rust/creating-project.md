@@ -59,7 +59,7 @@ crate-type = ["cdylib"]
 
 :::
 
-Next we need to add some basic dependencies. Since Pumpkin is still in early development, the internal crates aren't published to crates.io, so we need to tell Cargo to download the dependencies directly from GitHub.
+Next we need to add some basic dependencies from [crates.io](https://crates.io):
 :::code-group
 
 ```toml [Cargo.toml]
@@ -74,9 +74,9 @@ crate-type = ["cdylib"]
 [dependencies]
 // [!code ++:5]
 # This is the api crate that makes creating plugins easier, and has wit definitions
-pumpkin-plugin-api = { version = "0.1.0", git = "https://github.com/Pumpkin-MC/Pumpkin", package = "pumpkin-plugin-api" }
+pumpkin-plugin-api = "0.1.0-dev+26.2-26.45"
 # Optional: utilities for marketplace licensing and update checking
-pumpkin-plugin-utils = { version = "0.1.0", git = "https://github.com/Pumpkin-MC/Pumpkin", package = "pumpkin-plugin-utils" }
+pumpkin-plugin-utils = "0.1.0-dev+26.2-26.45"
 tracing = "0.1"
 ```
 

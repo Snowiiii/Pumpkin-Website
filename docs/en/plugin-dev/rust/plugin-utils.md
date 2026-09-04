@@ -29,8 +29,8 @@ edition = "2024"
 crate-type = ["cdylib"]
 
 [dependencies]
-pumpkin-plugin-api = { version = "0.1.0", git = "https://github.com/Pumpkin-MC/Pumpkin", package = "pumpkin-plugin-api" }
-pumpkin-plugin-utils = { version = "0.1.0", git = "https://github.com/Pumpkin-MC/Pumpkin", package = "pumpkin-plugin-utils" }
+pumpkin-plugin-api = "0.1.0-dev+26.2-26.45"
+pumpkin-plugin-utils = "0.1.0-dev+26.2-26.45"
 tracing = "0.1"
 ```
 
