@@ -16,6 +16,7 @@ secret = ""
 
 [networking.proxy.bungeecord]
 enabled = false
+secret = ""
 ```
 
 :::
@@ -23,6 +24,7 @@ enabled = false
 ### Configuration Options
 
 - **`[networking.proxy].enabled`**: Master switch to enable proxy support.
-- **`[networking.proxy.velocity].enabled`**: Enables Velocity forwarding protocol.
-- **`[networking.proxy.velocity].secret`**: Forwarding secret matching Velocity proxy configuration.
-- **`[networking.proxy.bungeecord].enabled`**: Enables BungeeCord forwarding protocol.
+- **`[networking.proxy.velocity].enabled`**: Enables Velocity modern forwarding protocol.
+- **`[networking.proxy.velocity].secret`**: Forwarding secret matching the Velocity proxy configuration.
+- **`[networking.proxy.bungeecord].enabled`**: Enables BungeeCord player info forwarding protocol.
+- **`[networking.proxy.bungeecord].secret`**: Optional shared secret for authenticating connections from the BungeeCord proxy via BungeeGuard (`bungeeguard-token`). When set, incoming connections must provide this token, preventing players from bypassing the proxy to connect directly.

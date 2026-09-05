@@ -9,6 +9,9 @@ Pumpkin verifies accounts with Mojang's session servers to ensure players use le
 ```toml [pumpkin.toml]
 [networking.java.authentication]
 enabled = true
+fallbacks = []
+profile_by_name_fallbacks = []
+profile_by_uuid_fallbacks = []
 connect_timeout = 5000
 read_timeout = 5000
 prevent_proxy_connections = false
@@ -32,24 +35,32 @@ elytra = true
 
 ### Configuration Options
 
-- **`enabled`**: Enables online authentication for Java clients.
-- **`connect_timeout`**: Connection timeout in milliseconds when contacting auth servers.
-- **`read_timeout`**: Read timeout in milliseconds when contacting auth servers.
-- **`prevent_proxy_connections`**: Block proxy/VPN connections during authentication.
+- **`enabled`**: Enables online authentication for Java clients (default: `true`).
+- **`url`**: (Optional) Custom authentication URL to verify join requests (e.g., custom auth servers like Drasl). Supports `{username}` and `{server_hash}` parameters.
+- **`fallbacks`**: List of fallback authentication URLs contacted if the primary/official session server is unreachable.
+- **`profile_by_name_url`**: (Optional) Custom URL template to fetch player profiles by username (`{username}`).
+- **`profile_by_name_fallbacks`**: Fallback URLs for looking up player profiles by username.
+- **`profile_by_uuid_url`**: (Optional) Custom URL template to fetch player profiles by UUID (`{uuid}`).
+- **`profile_by_uuid_fallbacks`**: Fallback URLs for looking up player profiles by UUID.
+- **`connect_timeout`**: Connection timeout in milliseconds when contacting authentication servers (default: `5000`).
+- **`read_timeout`**: Read timeout in milliseconds when contacting authentication servers (default: `5000`).
+- **`prevent_proxy_connections`**: Whether to block connections coming from proxies or VPNs during Mojang authentication (default: `false`).
+- **`prevent_proxy_connection_auth_url`**: (Optional) Custom authentication endpoint used specifically when proxy prevention is enabled.
+- **`services_url`**: (Optional) Public Minecraft services URL (used for player certificates and keys).
 
 ### Player Profile Settings
 
-- **`allow_banned_players`**: Allow players flagged/banned by Mojang to connect.
-- **`allowed_actions`**: Allowed actions when banned players connect (`"FORCED_NAME_CHANGE"`, `"USING_BANNED_SKIN"`).
+- **`allow_banned_players`**: Whether to allow players flagged or banned by Mojang to connect (default: `false`).
+- **`allowed_actions`**: Profile actions permitted when flagged players connect (e.g. `["FORCED_NAME_CHANGE", "USING_BANNED_SKIN"]`).
 
 ### Textures Settings
 
-- **`enabled`**: Enables player texture validation (skins, capes, elytras).
-- **`allowed_url_schemes`**: URL schemes permitted for texture downloads (`["http", "https"]`).
-- **`allowed_url_domains`**: Domains permitted for texture downloads (`[".minecraft.net", ".mojang.com"]`).
-- **`types.skin`**: Enable custom skins.
-- **`types.cape`**: Enable capes.
-- **`types.elytra`**: Enable elytra textures.
+- **`enabled`**: Enables fetching and validating player skins, capes, and elytra textures (default: `true`).
+- **`allowed_url_schemes`**: URL schemes permitted for texture downloads (default: `["http", "https"]`).
+- **`allowed_url_domains`**: Domains permitted for texture downloads (default: `[".minecraft.net", ".mojang.com"]`).
+- **`types.skin`**: Enable custom player skins (default: `true`).
+- **`types.cape`**: Enable player capes (default: `true`).
+- **`types.elytra`**: Enable player elytra textures (default: `true`).
 
 ## Bedrock Edition Authentication
 
@@ -63,3 +74,10 @@ read_timeout = 5000
 ```
 
 :::
+
+### Configuration Options
+
+- **`enabled`**: Whether Xbox Live authentication is required for Bedrock clients (default: `true`).
+- **`url`**: (Optional) Custom authentication or discovery endpoint URL.
+- **`connect_timeout`**: Connection timeout in milliseconds (default: `5000`).
+- **`read_timeout`**: Read timeout in milliseconds (default: `5000`).

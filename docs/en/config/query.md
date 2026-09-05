@@ -8,7 +8,7 @@ The Query protocol allows external applications (such as server lists or monitor
 
 ```toml [pumpkin.toml]
 [networking.query]
-enabled = true
+enabled = false
 address = "0.0.0.0:25565"
 ```
 
@@ -16,5 +16,5 @@ address = "0.0.0.0:25565"
 
 ### Configuration Options
 
-- **`enabled`**: Enables or disables the Query listener.
-- **`address`**: Network address and port to bind the Query listener to.
+- **`enabled`**: Enables or disables the GS4 Query listener (default: `false`).
+- **`address`**: Network address and port to bind the Query listener to (default: `"0.0.0.0:25565"`).

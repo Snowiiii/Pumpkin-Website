@@ -50,5 +50,5 @@ level = 6
 
 :::
 
-- **`algorithm`**: Compression algorithm used for chunk data (e.g. `"LZ4"`).
-- **`level`**: Compression level for chunk data.
+- **`algorithm`**: Compression algorithm used for chunk data. Supported options are `"LZ4"`, `"ZLib"`, `"GZip"`, and `"Custom"` (default: `"LZ4"`).
+- **`level`**: Compression level for chunk data (default: `6`).

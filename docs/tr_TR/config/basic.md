@@ -1,4 +1,4 @@
-﻿# Temel Yapılandırma
+# Temel Yapılandırma
 
 `pumpkin.toml` dosyasını temsil eder
 
@@ -9,7 +9,7 @@ Sunucunun bağlanacağı address.
 :::code-group
 
 ```toml
-seed = "1785537519969227430"
+seed = "1790155153199293024"
 default_difficulty = "Normal"
 op_permission_level = 4
 allow_nether = true
@@ -27,9 +27,13 @@ enforce_whitelist = false
 
 [logging]
 enabled = true
-threads = true
+level = "info"
+threads = false
+thread_ids = false
+target = false
 color = true
 timestamp = true
+timestamp_format = "[hour]:[minute]:[second]"
 file = "latest.log"
 
 [resource_pack.java]
@@ -46,7 +50,7 @@ packs = []
 
 [world]
 lighting = "default"
-autosave_ticks = 0
+autosave_ticks = 6000
 
 [world.chunk]
 type = "anvil"
@@ -57,7 +61,7 @@ algorithm = "LZ4"
 level = 6
 
 [networking.query]
-enabled = true
+enabled = false
 address = "0.0.0.0:25565"
 
 [networking.rcon]
@@ -81,6 +85,7 @@ secret = ""
 
 [networking.proxy.bungeecord]
 enabled = false
+secret = ""
 
 [networking.lan_broadcast]
 enabled = false
@@ -93,6 +98,7 @@ online_mode = true
 max_players = 1000
 view_distance = 16
 simulation_distance = 10
+keep_alive_time = 15
 motd = "A blazingly fast Pumpkin server!"
 
 [networking.java.compression]
@@ -102,6 +108,9 @@ level = 4
 
 [networking.java.authentication]
 enabled = true
+fallbacks = []
+profile_by_name_fallbacks = []
+profile_by_uuid_fallbacks = []
 connect_timeout = 5000
 read_timeout = 5000
 prevent_proxy_connections = false
@@ -120,15 +129,22 @@ skin = true
 cape = true
 elytra = true
 
+[networking.java.packet_limiter]
+enabled = true
+max_packet_rate = 500.0
+burst_capacity = 500.0
+kick_message = "Kicked for spamming packets"
+
 [networking.bedrock]
 enabled = true
-address = "0.0.0.0:19132"
-encryption = true
 online_mode = true
 max_players = 1000
 view_distance = 16
 simulation_distance = 10
 motd = "A blazingly fast Pumpkin server!"
+username_prefix = ""
+replace_username_spaces = true
+chunk_caching = true
 
 [networking.bedrock.compression]
 enabled = true
@@ -140,6 +156,18 @@ enabled = true
 connect_timeout = 5000
 read_timeout = 5000
 
+[networking.bedrock.nethernet]
+enabled = true
+address = "0.0.0.0:19132"
+identity_key = "nethernet-key.der"
+stun_servers = []
+
+[networking.bedrock.packet_limiter]
+enabled = true
+max_packet_rate = 500.0
+burst_capacity = 500.0
+kick_message = "Kicked for spamming packets"
+
 [commands]
 use_console = true
 use_tty = true
@@ -147,8 +175,17 @@ log_console = true
 broadcast_console_to_ops = true
 default_op_level = 0
 
+[commands.overrides]
+
 [chat]
 format = "<{DISPLAYNAME}> {MESSAGE}"
+
+[chat.anti_spam]
+enabled = true
+spam_threshold = 200
+message_cost = 20
+decay_per_tick = 1
+ops_bypass = true
 
 [pvp]
 enabled = true
@@ -182,7 +219,17 @@ april_fools = true
 send_recipes = true
 
 [plugins]
+enabled = true
+hot_reload = false
+ask_permission_confirmation = true
+allow_unsigned = true
+allowed_permissions = []
 blocked_permissions = []
+inherit_env = false
+loopback_only = false
+verify_signatures = true
+
+[plugins.overrides]
 
 [advancement]
 save_advancements = true
