@@ -83,7 +83,7 @@ impl Plugin for MyPlugin {
         }
     }
 
-    fn on_load(&mut self, context: Context) -> pumpkin_plugin_api::Result<()> {
+    fn on_load(&self, context: Context) -> pumpkin_plugin_api::Result<()> {
         // 1. Register permission node (Replaces plugin.yml permission)
         context.register_permission(&Permission {
             node: "feed_plugin:feed".to_string(),

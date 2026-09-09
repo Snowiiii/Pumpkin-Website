@@ -96,7 +96,7 @@ use pumpkin::{
 };
 
 #[plugin_method]
-async fn on_load(&mut self, server: Arc<Context>) -> Result<(), String> {
+async fn on_load(&self, server: Arc<Context>) -> Result<(), String> {
     server.init_log();
 
     log::info!("你好, Pumpkin!");

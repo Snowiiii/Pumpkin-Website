@@ -213,7 +213,7 @@ const NAMES: [&str; 2] = ["rps", "rockpaperscissors"]; // [!code ++:2]
 const DESCRIPTION: &str = "与服务器玩石头剪刀布。";
 
 #[plugin_method]
-async fn on_load(&mut self, server: Arc<Context>) -> Result<(), String> {
+async fn on_load(&self, server: Arc<Context>) -> Result<(), String> {
     server.init_log();
 
     log::info!("你好, Pumpkin!");

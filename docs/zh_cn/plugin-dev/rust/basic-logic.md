@@ -92,7 +92,7 @@ use pumpkin::plugin::Context;
 use pumpkin_api_macros::plugin_impl; // [!code --]
 
 #[plugin_method] // [!code ++:4]
-async fn on_load(&mut self, server: Arc<Context>) -> Result<(), String> {
+async fn on_load(&self, server: Arc<Context>) -> Result<(), String> {
     Ok(())
 }
 
@@ -164,7 +164,7 @@ async fn register_event(handler: Arc<H>, priority: EventPriority, blocking: bool
 
 ```rust [lib.rs]
 #[plugin_method]
-async fn on_load(&mut self, server: Arc<Context>) -> Result<(), String> {
+async fn on_load(&self, server: Arc<Context>) -> Result<(), String> {
     server.init_log(); // [!code ++:3]
 
     log::info!("你好, Pumpkin!");

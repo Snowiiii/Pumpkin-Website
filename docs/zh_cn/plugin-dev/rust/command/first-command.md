@@ -34,7 +34,7 @@ pub fn init_command_tree() -> CommandTree {
 
 ```diff
 #[plugin_method]
-async fn on_load(&mut self, context: Arc<Context>) -> Result<(), String> {
+async fn on_load(&self, context: Arc<Context>) -> Result<(), String> {
     context.init_log();
 
     log::info!("你好, Pumpkin!");
@@ -57,7 +57,7 @@ async fn on_load(&mut self, context: Arc<Context>) -> Result<(), String> {
 
 ```diff
 #[plugin_method]
-async fn on_load(&mut self, context: Arc<Context>) -> Result<(), String> {
+async fn on_load(&self, context: Arc<Context>) -> Result<(), String> {
     context.init_log();
 
     log::info!("你好, Pumpkin!");
