@@ -59,10 +59,12 @@ impl Plugin for MyPlugin {
             version: env!("CARGO_PKG_VERSION").into(),
             authors: vec!["Author".into()],
             description: "Plugin with license and update checks".into(),
+            dependencies: vec![],
+            permissions: vec![],
         }
     }
 
-    fn on_load(&mut self, context: Context) -> pumpkin_plugin_api::Result<()> {
+    fn on_load(&self, context: Context) -> pumpkin_plugin_api::Result<()> {
         // Initialize pumpkin-plugin-utils (verifies signature & caches metadata)
         let metadata = pumpkin_plugin_utils::init(&context)
             .map_err(|e| format!("Initialization failed: {e}"))?;
@@ -282,10 +284,12 @@ impl Plugin for CommercialPlugin {
             version: env!("CARGO_PKG_VERSION").into(),
             authors: vec!["Developer".into()],
             description: "A commercial Pumpkin plugin".into(),
+            dependencies: vec![],
+            permissions: vec![],
         }
     }
 
-    fn on_load(&mut self, context: Context) -> pumpkin_plugin_api::Result<()> {
+    fn on_load(&self, context: Context) -> pumpkin_plugin_api::Result<()> {
         // 1. Initialize plugin-utils (verifies Ed25519 signature & caches metadata)
         let meta = pumpkin_plugin_utils::init(&context).map_err(|err| {
             error!("Signature verification failed: {err}");
@@ -336,7 +340,7 @@ impl Plugin for CommercialPlugin {
         Ok(())
     }
 
-    fn on_unload(&mut self, _context: Context) -> pumpkin_plugin_api::Result<()> {
+    fn on_unload(&self, _context: Context) -> pumpkin_plugin_api::Result<()> {
         info!("CommercialPlugin unloaded.");
         Ok(())
     }

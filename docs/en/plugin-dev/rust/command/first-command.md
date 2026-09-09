@@ -42,10 +42,12 @@ impl Plugin for MyPlugin {
             version: env!("CARGO_PKG_VERSION").into(),
             authors: vec!["Developer".into()],
             description: "My first Pumpkin plugin".into(),
+            dependencies: vec![],
+            permissions: vec![],
         }
     }
 
-    fn on_load(&mut self, context: Context) -> pumpkin_plugin_api::Result<()> {
+    fn on_load(&self, context: Context) -> pumpkin_plugin_api::Result<()> {
         // 1. Register permission node
         context.register_permission(&Permission {
             node: "my_plugin:hello".to_string(),
