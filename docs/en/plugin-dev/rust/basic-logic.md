@@ -56,7 +56,8 @@ either, but both are read by the host and change how your plugin is loaded and s
   plugin loads without waiting on anything.
 - `permissions` lists the host features your plugin needs access to, using the constants from
   `pumpkin_plugin_api::permissions`. The server only grants sandboxed access (networking, filesystem, env vars, ...)
-  for permissions you declare here, and will prompt the server owner to approve them before loading your plugin.
+  for permissions you declare here, and may prompt the server owner to approve them, depending on the server
+  configuration and cached approval state.
 
 ```rust:line-numbers [lib.rs]
 use pumpkin_plugin_api::{Context, Plugin, PluginMetadata, permissions};
