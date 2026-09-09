@@ -52,8 +52,8 @@ The `dependencies` and `permissions` fields on `PluginMetadata` are empty above 
 either, but both are read by the host and change how your plugin is loaded and sandboxed:
 
 - `dependencies` lists the `name` of other plugins that must finish loading before yours does. The server
-  topologically sorts all plugins by this field, so if it is empty (or the named plugin isn't installed), your
-  plugin loads without waiting on anything.
+  topologically sorts all plugins by this field, so if it is empty, your plugin loads without waiting on anything.
+  If a named dependency isn't installed, the sort fails and your plugin does not load at all.
 - `permissions` lists the host features your plugin needs access to, using the constants from
   `pumpkin_plugin_api::permissions`. The server only grants sandboxed access (networking, filesystem, env vars, ...)
   for permissions you declare here, and may prompt the server owner to approve them, depending on the server
