@@ -267,7 +267,7 @@ Here is a full plugin implementation combining initialization, online licensing 
 :::code-group
 
 ```rust:line-numbers [src/lib.rs]
-use pumpkin_plugin_api::{Context, Plugin, PluginMetadata};
+use pumpkin_plugin_api::{Context, Plugin, PluginMetadata, permissions};
 use pumpkin_plugin_utils::LicenseStatus;
 use tracing::{error, info, warn};
 
@@ -285,7 +285,11 @@ impl Plugin for CommercialPlugin {
             authors: vec!["Developer".into()],
             description: "A commercial Pumpkin plugin".into(),
             dependencies: vec![],
-            permissions: vec![],
+            // Needed for check_license_online and check_for_updates below
+            permissions: vec![
+                permissions::HTTP_OUTBOUND.into(),
+                permissions::NETWORK_DNS.into(),
+            ],
         }
     }
 
