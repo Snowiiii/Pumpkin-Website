@@ -46,6 +46,34 @@ pumpkin_plugin_api::register_plugin!(HelloPlugin);
 
 This will create an empty plugin and implement all the necessary methods for it to be loaded by Pumpkin.
 
+## `Send + Sync` and interior mutability
+
+`Plugin` requires `Send + Sync`, and `on_load`/`on_unload` (and every other lifecycle callback) take `&self`
+rather than `&mut self`. This means your plugin type can be invoked concurrently from multiple threads, so any
+mutable state it holds must use thread-safe interior mutability such as `std::sync::Mutex`, `RwLock`, or the
+`std::sync::atomic` types, instead of plain fields you'd otherwise mutate through `&mut self`.
+
+```rust
+use std::sync::atomic::{AtomicU32, Ordering};
+
+struct HelloPlugin {
+    load_count: AtomicU32,
+}
+
+impl Plugin for HelloPlugin {
+    fn new() -> Self {
+        HelloPlugin { load_count: AtomicU32::new(0) }
+    }
+
+    // ...
+
+    fn on_load(&self, _context: Context) -> pumpkin_plugin_api::Result<()> {
+        self.load_count.fetch_add(1, Ordering::Relaxed);
+        Ok(())
+    }
+}
+```
+
 ## Dependencies and permissions
 
 The `dependencies` and `permissions` fields on `PluginMetadata` are empty above since our plugin doesn't need
@@ -118,7 +146,7 @@ A `dependencies` entry must match the other plugin's `metadata.name` exactly, no
 | `FS_READ_DATA` | `fs.read.data` | Read files in the plugin's own data folder (`plugins/data/<name>`). |
 | `FS_WRITE_DATA` | `fs.write.data` | Write (and read) files in the plugin's own data folder. Implies `FS_READ_DATA`. |
 | `SYS_ENV` | `sys.env` | Read all environment variables. |
-| `SYS_ENV_PREFIX` + name | `sys.env.<NAME>` | Read one specific environment variable, e.g. `sys.env.PATH`. |
+| `SYS_ENV_PREFIX` + name | `sys.env.<NAME>` | Read one specific environment variable, such as `sys.env.PATH`. |
 | `SYS_INFO` | `sys.info` | Read system information (CPU, memory, OS). |
 | `SYS_INFO_CPU` | `sys.info.cpu` | Read CPU information only. |
 | `SYS_INFO_RAM` | `sys.info.ram` | Read RAM information only. |
