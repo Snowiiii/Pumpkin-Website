@@ -220,7 +220,7 @@ impl Plugin for HelloPlugin {
         // Existing Code
     }
 
-    fn on_load(&mut self, context: Context) -> pumpkin_plugin_api::Result<()> {
+    fn on_load(&self, context: Context) -> pumpkin_plugin_api::Result<()> {
         // Existing Code
 
         let command = Command::new( // [!code ++:20]

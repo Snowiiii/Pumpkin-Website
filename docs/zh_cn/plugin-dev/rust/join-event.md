@@ -1,3 +1,5 @@
+<!-- TODO(i18n): outdated, replaced in en by events.md. -->
+
 # 编写事件处理器
 
 事件处理器是插件的主要功能之一。它们允许插件接入服务器的内部工作并改变其行为，以执行其他操作。作为一个简单的例子，我们将实现一个`player_join`事件的处理器。
@@ -96,7 +98,7 @@ use pumpkin::{
 };
 
 #[plugin_method]
-async fn on_load(&mut self, server: Arc<Context>) -> Result<(), String> {
+async fn on_load(&self, server: Arc<Context>) -> Result<(), String> {
     server.init_log();
 
     log::info!("你好, Pumpkin!");

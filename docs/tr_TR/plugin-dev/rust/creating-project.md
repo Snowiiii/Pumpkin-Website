@@ -1,3 +1,5 @@
+<!-- TODO(i18n): outdated, plugin crates come from crates.io now, not git. -->
+
 ﻿# Yeni bir proje oluşturma
 
 Pumpkin eklentileri, [Cargo](https://doc.rust-lang.org/book/ch01-03-hello-cargo.html) derleme sistemini kullanır.

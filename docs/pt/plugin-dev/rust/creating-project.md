@@ -1,3 +1,5 @@
+<!-- TODO(i18n): outdated, plugin crates come from crates.io now, not git. -->
+
 # Criando um Novo Projeto
 
 Plugins Pumpkin utilizam o sistema de build [Cargo](https://doc.rust-lang.org/book/ch01-03-hello-cargo.html).

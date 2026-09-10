@@ -88,13 +88,13 @@ impl Plugin for HelloPlugin {
         // ...
     }
 
-    fn on_load(&mut self, context: Context) -> pumpkin_plugin_api::Result<()> {
+    fn on_load(&self, context: Context) -> pumpkin_plugin_api::Result<()> {
         info!("Hello from the example plugin!");
         context.register_event_handler(MyJoinHandler, EventPriority::Normal, true)?;
         Ok(())
     }
 
-    fn on_unload(&mut self, _context: Context) -> pumpkin_plugin_api::Result<()> {
+    fn on_unload(&self, _context: Context) -> pumpkin_plugin_api::Result<()> {
         info!("Example plugin unloaded. Goodbye!");
         Ok(())
     }

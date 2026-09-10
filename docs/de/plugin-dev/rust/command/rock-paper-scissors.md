@@ -203,7 +203,7 @@ const NAMES: [&str; 2] = ["rps", "rockpaperscissors"]; // [!code ++:2]
 const DESCRIPTION: &str = "Spiele Schere Stein Papier mit dem Server.";
 
 #[plugin_method]
-async fn on_load(&mut self, server: Arc<Context>) -> Result<(), String> {
+async fn on_load(&self, server: Arc<Context>) -> Result<(), String> {
     server.init_log();
 
     log::info!("Hallo, Pumpkin!");

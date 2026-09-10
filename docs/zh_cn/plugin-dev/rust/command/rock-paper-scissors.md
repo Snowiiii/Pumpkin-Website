@@ -1,3 +1,5 @@
+<!-- TODO(i18n): outdated, en uses pumpkin-plugin-api, not #[plugin_method]. -->
+
 # 编写命令处理器
 
 在 Minecraft 中，命令是普通玩家和服务器管理员与游戏进行底层交互的主要方式。它们可用于执行从简单的聊天消息到复杂的服务器管理等广泛任务。在本教程中，我们将创建一个基本的“石头剪刀布”命令处理器，让玩家可以与服务器进行游戏。
@@ -213,7 +215,7 @@ const NAMES: [&str; 2] = ["rps", "rockpaperscissors"]; // [!code ++:2]
 const DESCRIPTION: &str = "与服务器玩石头剪刀布。";
 
 #[plugin_method]
-async fn on_load(&mut self, server: Arc<Context>) -> Result<(), String> {
+async fn on_load(&self, server: Arc<Context>) -> Result<(), String> {
     server.init_log();
 
     log::info!("你好, Pumpkin!");

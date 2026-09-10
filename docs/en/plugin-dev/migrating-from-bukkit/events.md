@@ -86,7 +86,7 @@ impl Plugin for MyPlugin {
         }
     }
 
-    fn on_load(&mut self, context: Context) -> pumpkin_plugin_api::Result<()> {
+    fn on_load(&self, context: Context) -> pumpkin_plugin_api::Result<()> {
         // Register blocking event handler with Normal priority
         context.register_event_handler(JoinHandler, EventPriority::Normal, true)?;
         Ok(())

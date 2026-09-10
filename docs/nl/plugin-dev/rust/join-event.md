@@ -1,3 +1,5 @@
+<!-- TODO(i18n): outdated, replaced in en by events.md. -->
+
 # Writing a Event Handler
 
 Event handlers are one of the main functions of plugins, they allow a plugin to tap into the internal workings of the
@@ -97,7 +99,7 @@ use pumpkin::plugin::{player::PlayerJoinEvent, Context, EventHandler, EventPrior
 use pumpkin::plugin::{player::PlayerJoinEvent, Context, EventHandler}; // [!code --]
 
 #[plugin_method]
-async fn on_load(&mut self, server: Arc<Context>) -> Result<(), String> {
+async fn on_load(&self, server: Arc<Context>) -> Result<(), String> {
     server.init_log();
 
     log::info!("Hello, Pumpkin!");
