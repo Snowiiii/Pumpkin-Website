@@ -158,6 +158,11 @@ We can now try to compile our plugin for the first time. To do so, run this comm
 cargo build --release
 ```
 
+::: tip NOTE
+Plugins are compiled to WebAssembly. If you do not have the target yet, install it once with
+`rustup target add wasm32-wasip2`.
+:::
+
 You do not need to build in release mode, but it greatly reduces the size of the wasm plugin and
 reduces startup times.
 
