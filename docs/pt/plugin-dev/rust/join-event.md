@@ -1,3 +1,5 @@
+<!-- TODO(i18n): outdated, replaced in en by events.md. -->
+
 # Escrevendo um Gerenciador de Evento
 
 Gerenciadores de eventos são uma das funções principais dos plugins. Eles permitem que um plugin acesse o funcionamento interno do servidor e altere seu comportamento para realizar alguma outra ação. Como exemplo simples, vamos implementar um manipulador para o evento `player_join`.

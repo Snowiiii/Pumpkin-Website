@@ -1,3 +1,5 @@
+<!-- TODO(i18n): outdated, en uses pumpkin-plugin-api now, plus dependencies/permissions and Send + Sync. -->
+
 # Escrevendo a Lógica Básica
 
 ## Base do Plugin

@@ -1,3 +1,5 @@
+<!-- TODO(i18n): outdated, replaced in en by events.md. -->
+
 ﻿# Bir Olay İşleyicisi Yazma
 
 Olay işleyicileri, eklentilerin ana işlevlerinden biridir. Bir eklentinin sunucunun iç işleyişine dokunmasına ve davranışını değiştirerek başka bir eylem gerçekleştirmesine olanak tanırlar. Basit bir örnek olarak `player_join` olayı için bir işleyici uygulayacağız.

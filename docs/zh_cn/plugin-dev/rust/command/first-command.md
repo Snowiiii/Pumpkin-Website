@@ -1,3 +1,5 @@
+<!-- TODO(i18n): outdated, en uses pumpkin-plugin-api, not #[plugin_method]. -->
+
 # 制作您的第一个命令
 
 在注册您的命令之前，您需要为其选择一个名称。在本示例中，我们将其定义为常量数组。使用数组可以方便地添加别名

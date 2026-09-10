@@ -1,3 +1,5 @@
+<!-- TODO(i18n): outdated, plugin crates come from crates.io now, not git. -->
+
 # 创建新项目
 
 Pumpkin 插件使用 [Cargo](https://doc.rust-lang.org/book/ch01-03-hello-cargo.html) 构建系统。

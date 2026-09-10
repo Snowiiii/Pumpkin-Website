@@ -1,3 +1,5 @@
+<!-- TODO(i18n): outdated, replaced in en by events.md. -->
+
 # Writing a Event Handler
 
 Event handlers are one of the main functions of plugins, they allow a plugin to tap into the internal workings of the
