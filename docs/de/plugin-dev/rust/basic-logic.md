@@ -101,11 +101,8 @@ impl Plugin for UpdateCheckerPlugin {
             description: "Pings a remote server to check for plugin updates".into(),
             // Wird erst geladen, nachdem "EconomyCore" initialisiert ist
             dependencies: vec!["EconomyCore".into()],
-            // Nötig für ausgehende HTTP-Anfragen, plus DNS zum Auflösen des Hosts
-            permissions: vec![
-                permissions::HTTP_OUTBOUND.into(),
-                permissions::NETWORK_DNS.into(),
-            ],
+            // Nötig für ausgehende HTTP-Anfragen
+            permissions: vec![permissions::HTTP_OUTBOUND.into()],
         }
     }
 
